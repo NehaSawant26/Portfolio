@@ -7,7 +7,7 @@ const projects = [
     technologies: "React.js, Gemini AI, Firebase, Tailwind CSS",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8j9wibqnYBz6xPuSoN6N8H0PPU3w8Hr_Uqg&s",
     github: "https://github.com/NehaSawant26/AI-Trip-Planner",
-    live: "https://full-stack-ai-trip-planner.vercel.app/",
+    live: "https://ai-trip-planner-tan.vercel.app/",
   },
   {
     id: 2,
