@@ -21,7 +21,7 @@ const Home = () => {
           <p className="text-lg md:text-xl pt-3 pb-6">
             Looking for a beginner role to enhance and explore my technical knowledge. I am seeking a role where I can apply my skills and contribute to the development of innovative software solutions.
           </p>
-          <a href="https://drive.google.com/file/d/19BHySQQHQ2r1xkfIEE0YTVQLaBpliFkI/view?usp=drivesdk" className="md:md-10 text-white px-3 text-sm md:text-lg md:py-2 md:px-6 hover:opacity-70 duration-300 hover:scale-105 font-semibold rounded-3xl bg-gradient-to-r 
+          <a href="https://drive.google.com/file/d/1tA7We-x4uweeG-rA9QUKZq0MeiTl65or/view?usp=sharing" className="md:md-10 text-white px-3 text-sm md:text-lg md:py-2 md:px-6 hover:opacity-70 duration-300 hover:scale-105 font-semibold rounded-3xl bg-gradient-to-r 
               from-green-400 to-blue-500">
            Review Resume
           </a>

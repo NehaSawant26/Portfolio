@@ -3,24 +3,48 @@ import React from "react";
 const projects = [
   {
     id: 1,
+    name: "AI-Trip-Planner",
+    technologies: "React.js, Gemini AI, Firebase, Tailwind CSS",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8j9wibqnYBz6xPuSoN6N8H0PPU3w8Hr_Uqg&s",
+    github: "https://github.com/NehaSawant26/AI-Trip-Planner",
+    live: "https://full-stack-ai-trip-planner.vercel.app/",
+  },
+  {
+    id: 2,
     name: "iNotebook",
     technologies: "React.js, MongoDB and Context API",
     image:"https://images.prismic.io/noteplan-landing-cms/ZhabTTjCgu4jzuoL_Google_Keep.png?auto=format,compress",
     github: "https://github.com/NehaSawant26/iNotebook",
   },
   {
-    id: 2,
+    id: 3,
     name: "Newsapp",
     technologies: "React.js, News API",
     image: "https://149842033.v2.pressablecdn.com/wp-content/uploads/2018/05/newspaper-free-news-website-templates.jpg",
     github: "https://github.com/NehaSawant26/NewsApp",
   },
   {
-    id: 3,
+    id: 4,
     name: "Textutils",
     technologies: "CSS, React.js",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8akVzsL4zU-cn6KT-_7pvQof4F1sogErgBg&s",
     github: "https://github.com/NehaSawant26/Textutiles",
+  },
+  {
+    id: 5,
+    name: "Quiz application",
+    technologies: "React.js, Tailwind CSS",
+    image: "https://assets.apk.live/practice.test.neet.testline--128-screenshot3.webp",
+    github: "https://github.com/NehaSawant26/Quiz_App",
+    live: "https://quiz-app-kappa-henna-94.vercel.app/",
+  },
+  {
+    id: 6,
+    name: "Taking Medical Info",
+    technologies: "React.js, Tailwind CSS, react-icons",
+    image: "https://www.sciencepharma.com/wp-content/uploads/2024/01/medical_information_main_eng-1-scaled.jpg",
+    github: "https://github.com/NehaSawant26/Medical_Info",
+    live: "https://medical-info-nine.vercel.app/",
   },
 
 ];
