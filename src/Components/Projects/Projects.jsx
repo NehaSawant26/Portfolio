@@ -65,6 +65,9 @@ const Projects = () => {
               <a href={project.github} className=" inline-block bg-gradient-to-r 
               from-green-400 to-blue-500 text-white font-semibold px-10 py-2 rounded-full" target="_blank" 
               rel="noopener noreferrer" >GitHub</a>
+              <a href={project.live} className=" inline-block bg-gradient-to-r 
+              from-green-400 to-blue-500 text-white font-semibold px-10 py-2 ml-5 rounded-full" target="_blank" 
+              rel="noopener noreferrer" >Demo</a>
             </div>
           ))}
         </div>
