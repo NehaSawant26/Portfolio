@@ -4,6 +4,8 @@ import Contact from "./Components/Contact/Contact";
 import Home from "./Components/Home/Home";
 import Navbar from "./Components/Navbar/Navbar";
 import Projects from "./Components/Projects/Projects";
+import Experience from "./Components/Experience/Experience";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
@@ -12,8 +14,10 @@ function App() {
       <Home />
       <About />
       <Skills />
+      <Experience />
       <Projects />
       <Contact />
+      <Footer />
     </div>
   );
 }

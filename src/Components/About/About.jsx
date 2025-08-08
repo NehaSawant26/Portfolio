@@ -1,75 +1,201 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { IoArrowForward } from "react-icons/io5";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const About = () => {
+  const [showFrontend, setShowFrontend] = useState(false);
+  const [frontendVisibleWords, setFrontendVisibleWords] = useState(0);
+  const [showFrontendHeading, setShowFrontendHeading] = useState(false);
+  const [showBackend, setShowBackend] = useState(false);
+  const [backendVisibleWords, setBackendVisibleWords] = useState(0);
+  const [showBackendHeading, setShowBackendHeading] = useState(false);
+
+  const frontend =
+    " I work with React.js, Tailwind CSS, JavaScript and Framer Motion to build responsive and interactive user interfaces. I ensure that users can interact with websites and applications effortlessly while enjoying a visually pleasing experience.";
+
+  const backend =
+    " I primarily use Ruby on Rails to build scalable and secure APIs, with additional knowledge of Node.js and Express.js. I have worked with databases like MongoDB and PostgreSQL for data management. I am comfortable integrating authentication, handling RESTful APIs, and using tools like Git, GitHub and Postman for efficient development workflows.";
+
+  const frontendWords = frontend.split(" ");
+  const backendWords = backend.split(" ");
+
+  const { ref, inView } = useInView({
+    threshold: 0.3,
+    triggerOnce: false,
+  });
+
+  useEffect(() => {
+    if (inView) {
+      setShowFrontendHeading(false);
+      setShowFrontend(false);
+      setFrontendVisibleWords(0);
+
+      setShowBackendHeading(false);
+      setShowBackend(false);
+      setBackendVisibleWords(0);
+
+      setTimeout(() => setShowFrontendHeading(true), 500);
+      setTimeout(() => setShowBackendHeading(true), 2000);
+    }
+  }, [inView]);
+
+  useEffect(() => {
+    if (showFrontend && frontendVisibleWords < frontendWords.length) {
+      const timeout = setTimeout(() => {
+        setFrontendVisibleWords(frontendVisibleWords + 1);
+      }, 120);
+      return () => clearTimeout(timeout);
+    }
+  }, [frontendVisibleWords, frontendWords.length, showFrontend]);
+
+  useEffect(() => {
+    if (showBackend && backendVisibleWords < backendWords.length) {
+      const timeout = setTimeout(() => {
+        setBackendVisibleWords(backendVisibleWords + 1);
+      }, 120);
+      return () => clearTimeout(timeout);
+    }
+  }, [backendVisibleWords, backendWords.length, showBackend]);
+
   return (
     <div
+      ref={ref}
       name="About Me"
-      className=" text-white md:flex md:mx-20 rounded-2xl p-3 mx-4 "
+      className=" text-white md:mx-20 rounded-2xl p-3 mx-4 mt-3"
     >
-      <div>
-        <h2 className="text-2xl md:text-4xl text-center font-bold">About Me</h2>
-        <div className="items-center justify-center">
+      <h2 className="text-2xl md:text-4xl text-center font-bold">About Me</h2>
 
-          <ul>
+      <div className="flex md:flex mt-14 justify-evenly">
+        <div className="w-3/6 items-center justify-center ">
+          <motion.p
+            className="text-white text-xl space-y-4"
+            initial={{ opacity: 0, x: -50 }}
+            animate={inView ? { opacity: 1, x: 0 } : {}}
+            transition={{
+              duration: 1,
+              delay: 1,
+            }}
+          >
+            <p>
+              Hello, I am Neha Sawant, a passionate web developer from Buldhana,
+              Maharashtra. I love transforming ideas into scalable and elegant
+              solutions. I am always eager to learn, build and be part of
+              innovative teams that push boundaries.
+            </p>
+          </motion.p>
 
-            <div className="text-lg mt-4">
-              <p>
-                Hello, I am Neha Sawant, a passionate web developer with a focus on the MERN stack, but still exploring other technologies and frameworks that catch my interest. If you're looking for a developer to add to your team, I'd love to hear from you.
+          {showFrontendHeading && (
+            <motion.div
+              className="flex text-lg md:text-2xl text-green-500 pt-3 tracking-tight"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              onAnimationComplete={() => setShowFrontend(true)}
+            >
+              <IoArrowForward className="mt-1 mr-2" /> Frontend
+            </motion.div>
+          )}
+
+          {showFrontend && (
+            <p className="text-lg md:text-xl pt-3 pb-6 min-h-[3.5rem]">
+              {frontendWords.slice(0, frontendVisibleWords).join(" ")}
+              {frontendVisibleWords < frontendWords.length && (
+                <span className="animate-pulse"></span>
+              )}
+            </p>
+          )}
+
+          {showBackendHeading && (
+            <motion.div
+              className="flex text-lg md:text-2xl text-green-500 pt-3 tracking-tight"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 5 }}
+              onAnimationComplete={() => setShowBackend(true)}
+            >
+              <IoArrowForward className="mt-1 mr-2" /> Backend
+            </motion.div>
+          )}
+
+          {showBackend && (
+            <p className="text-lg md:text-xl pt-3 pb-6 min-h-[3.5rem]">
+              {backendWords.slice(0, backendVisibleWords).join(" ")}
+              {backendVisibleWords < backendWords.length && (
+                <span className="animate-pulse"></span>
+              )}
+            </p>
+          )}
+
+          <div className=""></div>
+        </div>
+
+        <div className="w-2/5 ml-16 mt-2 mb-10">
+          <motion.div
+            className="border border-purple-500 p-5 pl-10 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
+            initial={{ opacity: 0, y: -50 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 2 }}
+          >
+            <h1 className="text-green-600 text-3xl mb-10 font-semibold text-center">
+              Education
+            </h1>
+            <h1 className="text-purple-500 border border-purple-300 rounded-3xl w-48 p-1 text-sm bg-fuchsia-900 bg-opacity-30">
+              🎓 Bachelors of Technology
+            </h1>
+            <div className="pl-7 pr-10 mt-2">
+              <h1 className="font-semibold text-lg">
+                BTech, Electronics and Communication
+              </h1>
+              <p className="text-cyan-400">
+                Indian Institute of Information Technology, Nagpur
               </p>
+              <h1 className="text-gray-300">2021-2025</h1>
             </div>
 
-            <div className="flex gap-3 py-4">
-              <span className="w-full">
-                <h1 className="text-xl md:text-2xl font-bold text-green-500">
-                  Education
-                </h1>
-                <p className="text-lg md:text-md">
-                  I am currently pursuing my BTech Degree from Indian Institute of Information Technology, Nagpur (IIITN). I am in Final year of Electronics and Communication (EC) branch. (Dec.2021 - May.2025)
-                </p>
-              </span>
+            <h1 className="text-purple-500 border border-purple-300 rounded-3xl w-48 p-1 text-sm bg-fuchsia-900 bg-opacity-30 mt-8">
+              🎓 Higher Secondary
+            </h1>
+            <div className="pl-7 pr-10 mt-2">
+              <h1 className="font-semibold text-lg">Science Stream</h1>
+              <p className="text-cyan-400">
+                Shree Shivaji Maharaj Kanishth Mahavidyalaya, Barad
+              </p>
+              <h1 className="text-gray-300">2020-2021</h1>
             </div>
+          </motion.div>
 
-            <div className="text-xl md:text-2xl font-bold text-green-500 ">
-              <h1>Development</h1>
-            </div>
+          <div className="flex gap-5 mt-8">
+            <motion.div
+              className="border border-purple-500 pt-3 p-3 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 3 }}
+            >
+              <p className="text-2xl text-center text-green-500">10+</p>
+              <p className="text-center mt-2">Projects completed</p>
+            </motion.div>
 
-            <div className="flex gap-3 py-2">
-              <IoArrowForward size={30} className="mt-1" />
-              <span className="w-full">
-                <h1 className="text-xl md:text-2xl font-semibold text-green-400">
-                  Frontend developer
-                </h1>
-                <p className="text-lg md:text-md ">
-                  I can create the layout, structure, and interactive elements of a website using HTML (for structure), CSS (for styling), and JavaScript (for interactivity). I use JavaScript frameworks/libraries such as React to build dynamic and scalable web applications more efficiently. I ensure that users can interact with websites and applications effortlessly while enjoying a visually pleasing experience.
-                </p>
-              </span>
-            </div>
+            <motion.div
+              className="border border-purple-500 pt-3 p-6 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 4 }}
+            >
+              <p className="text-2xl text-center text-green-500">300+</p>
+              <p className="text-center mt-2">Problems solved</p>
+            </motion.div>
 
-            <div className="flex gap-3 py-2">
-              <IoArrowForward size={30} className="mt-1" />
-              <span className="w-full">
-                <h1 className="text-xl md:text-2xl font-semibold text-green-400">
-                  Backend developer
-                </h1>
-                <p className="text-lg md:text-md">
-                  I can work with databases, servers, APIs, and other systems that handle and store data. I can write the logic for how data flows between the server, databases, and the client-side. This often involves working with server-side languages and frameworks such as Node.js. I can design and manage databases that store data like user profiles, transactions, and other dynamic content.
-                </p>
-              </span>
-            </div>
-
-            <div className="flex gap-3 py-4">
-              <span className="w-full">
-                <h1 className="text-xl md:text-2xl font-bold text-green-500">
-                  Mission Statement
-                </h1>
-                <p className="text-lg md:text-md ">
-                  My mission is to leverage my skills and creativity to build and maintain entire web applications from start to finish and handle all aspects of development. I am committed to continuous learning, and becoming proficient in both technical skills and problem-solving.
-                </p>
-              </span>
-            </div>
-
-          </ul>
+            <motion.div
+              className="border border-purple-500 pt-3 p-4 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
+              initial={{ opacity: 0, y: 50 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 5 }}
+            >
+              <p className="text-2xl text-center text-green-500">3+</p>
+              <p className="text-center mt-2">Languages known</p>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

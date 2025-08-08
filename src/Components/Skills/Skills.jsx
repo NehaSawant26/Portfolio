@@ -1,68 +1,168 @@
-import React from "react";
-import { FaCss3, FaHtml5, FaJs, FaReact, FaNode, FaBootstrap, FaGitAlt } from "react-icons/fa";
-import { SiMongodb, SiExpress, SiDocker, SiNginx, SiTailwindcss } from "react-icons/si";
+import React, { useState, useEffect, useRef } from "react";
+import {
+  FaCss3,
+  FaHtml5,
+  FaJs,
+  FaReact,
+  FaNode,
+  FaBootstrap,
+  FaGitAlt,
+} from "react-icons/fa";
+import {
+  SiMongodb,
+  SiExpress,
+  SiDocker,
+  SiTailwindcss,
+  SiRubyonrails,
+  SiPostman,
+  SiRedux,
+  SiJest,
+} from "react-icons/si";
 import { BiLogoPostgresql, BiLogoGithub } from "react-icons/bi";
 import { FiDatabase } from "react-icons/fi";
-import { VscVscode } from "react-icons/vsc"
+import { VscVscode } from "react-icons/vsc";
+import { motion } from "framer-motion";
 
 const Skills = () => {
+  const icons = [
+    {
+      icon: <FaHtml5 color="#E34F26" size={100} />,
+      shadow: "shadow-orange-800",
+      title: "HTML5",
+    },
+    {
+      icon: <FaCss3 color="#1572B6" size={100} />,
+      shadow: "shadow-blue-700",
+      title: "CSS3",
+    },
+    {
+      icon: <SiTailwindcss color="#008bb9" size={100} />,
+      shadow: "shadow-sky-600",
+      title: "Tailwind CSS",
+    },
+    {
+      icon: <FaJs color="#F7DF1E" size={100} />,
+      shadow: "shadow-yellow-300",
+      title: "JavaScript",
+    },
+    {
+      icon: <FaReact color="#61DAFB" size={100} />,
+      shadow: "shadow-blue-400",
+      title: "React.js",
+    },
+    {
+      icon: <FaBootstrap color="#6f42c1" size={100} />,
+      shadow: "shadow-purple-500",
+      title: "Bootstrap",
+    },
+    {
+      icon: <FaNode color="#47A248" size={100} />,
+      shadow: "shadow-green-700",
+      title: "Node.js",
+    },
+    {
+      icon: <SiRubyonrails color="#c61a09" size={100} />,
+      shadow: "shadow-red-700",
+      title: "Ruby on Rails",
+    },
+    {
+      icon: <SiExpress color="#fff" size={100} />,
+      shadow: "shadow-slate-200",
+      title: "Express.js",
+    },
+    {
+      icon: <FiDatabase color="#d24b03" size={100} />,
+      shadow: "shadow-orange-700",
+      title: "Databases",
+    },
+    {
+      icon: <SiMongodb color="#47A248" size={100} />,
+      shadow: "shadow-green-700",
+      title: "MongoDB",
+    },
+    {
+      icon: <BiLogoPostgresql color="#008bb9" size={100} />,
+      shadow: "shadow-cyan-700",
+      title: "PostgreSQL",
+    },
+    {
+      icon: <SiJest color="#7E2811" size={100} />,
+      shadow: "shadow-yellow-900",
+      title: "Jest",
+    },
+    {
+      icon: <SiDocker color="#008bb9" size={100} />,
+      shadow: "shadow-blue-600",
+      title: "Docker",
+    },
+    {
+      icon: <SiPostman color="#fb7d07" size={90} />,
+      shadow: "shadow-orange-700",
+      title: "Postman",
+    },
+    {
+      icon: <VscVscode color="#008dd8" size={100} />,
+      shadow: "shadow-blue-500",
+      title: "VS Code",
+    },
+    {
+      icon: <FaGitAlt color="#d24b03" size={100} />,
+      shadow: "shadow-orange-800",
+      title: "Git",
+    },
+    {
+      icon: <BiLogoGithub color="#fff" size={90} />,
+      shadow: "shadow-slate-200",
+      title: "GitHub",
+    },
+    {
+      icon: <SiRedux color="#854AAF" size={90} />,
+      shadow: "shadow-purple-800",
+      title: "Ridux",
+    },
+  ];
+
   return (
-    <div name="Skills" className="p-10 md:p-3 sm:p-10 ">
-      <h1 className="text-2xl md:text-4xl text-center text-white font-bold">Skills</h1>
+    <div name="Skills" className="p-10 md:p-4 sm:p-10 mb-24">
+      <h1 className="text-2xl md:text-4xl text-center text-white font-bold">
+        Skills
+      </h1>
 
       <div className="flex justify-center px-24">
-        <div className="flex flex-wrap md:w-2/3 gap-10 md:p-10 py-6 sm:py-5">
-
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-orange-800 rounded-2xl">
-            <FaHtml5 color="#E34F26" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center  shadow-lg shadow-blue-700 rounded-2xl">
-            <FaCss3 color="#1572B6" size={80} />
-          </span>
-          <span className="p-3  w-40 grid justify-items-center  shadow-lg shadow-sky-600 rounded-2xl">
-            <SiTailwindcss color="#008bb9" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-yellow-300 rounded-2xl">
-            <FaJs color="#F7DF1E" size={80} />
-          </span>
-          <span className="p-3  w-40 grid justify-items-center shadow-lg shadow-blue-400 rounded-2xl">
-            <FaReact color="#61DAFB" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-purple-500 rounded-2xl">
-            <FaBootstrap color="#6f42c1" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-green-700 rounded-2xl">
-            <FaNode color="#47A248" size={90} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-slate-200 rounded-2xl">
-            <SiExpress color="#ffff" size={70} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-orange-700 rounded-2xl">
-            <FiDatabase color="#d24b03" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-green-700 rounded-2xl">
-            <SiMongodb color="#47A248" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-cyan-700 rounded-2xl">
-            <BiLogoPostgresql color="#008bb9" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-blue-600 rounded-2xl">
-            <SiDocker color="#008bb9" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-green-700 rounded-2xl">
-            <SiNginx color="#47A248" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-blue-500 rounded-2xl">
-            <VscVscode color="#008dd8" size={80} />
-          </span>
-          <span className="p-3  w-40 grid justify-items-center shadow-lg shadow-orange-800 rounded-2xl">
-            <FaGitAlt color="#d24b03" size={80} />
-          </span>
-          <span className="p-3 w-40 grid justify-items-center shadow-lg shadow-slate-200 rounded-2xl">
-            <BiLogoGithub color="#ffff" size={90} />
-          </span>
-
-        </div>
+        <motion.div
+          className="gap-8 top-1/2 font-bold"
+          animate={{ x: ["0%", "-150%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 25,
+            ease: "linear",
+          }}
+          style={{
+            minWidth: "200%",
+            display: "flex",
+            left: 0,
+          }}
+        >
+          {[...icons, ...icons].map((_, idx) => (
+            <div key={idx} className="flex gap-14 mt-24">
+              {icons.map((item, i) => (
+                <motion.div
+                  key={i}
+                  whileHover={{ scale: 1.2 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className={`p-5 w-48 flex justify-center items-center shadow-lg rounded-2xl ${item.shadow}`}
+                >
+                  <div className="items-center">
+                    {item.icon}
+                    <p className="text-2xl text-white text-center font-thin mt-8 ">
+                      {item.title}
+                    </p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          ))}
+        </motion.div>
       </div>
     </div>
   );
