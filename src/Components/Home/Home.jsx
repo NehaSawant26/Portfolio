@@ -80,17 +80,17 @@ const Home = () => {
             </p>
           )}
           {showButton && (
-            <div className="">
+            <div className="flex flex-col md:flex-row items-center md:justify-center">
               <a
                 href="https://drive.google.com/file/d/1-EOg9nLAzPFjJl9Wqm2rz8337NG42H0Z/view?usp=sharing"
-                className="md:md-10 text-white px-3 text-sm md:text-lg md:py-2 md:px-6 hover:opacity-70 duration-300 hover:scale-105 font-semibold rounded-3xl bg-gradient-to-r
+                className="mb-4 md:mb-0 md:mr-6 text-white px-3 text-sm md:text-lg md:py-2 md:px-6 hover:opacity-70 duration-300 hover:scale-105 font-semibold rounded-3xl bg-gradient-to-r
               from-green-400 to-blue-500"
               >
                 Review Resume
               </a>
               <Link
                 to="Contact Me"
-                className="md:md-10 text-white mx-10 text-sm md:text-lg md:py-2 md:px-6 hover:opacity-70 duration-300 hover:scale-105 font-semibold rounded-3xl bg-gradient-to-r
+                className="text-white px-3 mx-10 text-sm md:text-lg md:py-2 md:px-6 hover:opacity-70 duration-300 hover:scale-105 font-semibold rounded-3xl bg-gradient-to-r
               from-green-400 to-blue-500"
               >
                 Hire me
@@ -98,7 +98,7 @@ const Home = () => {
             </div>
           )}
         </div>
-        <div className="relative md:w-1/2 md:ml-40 md:mt-16 order-1">
+        <div className="relative md:w-1/2 md:ml-40 mt-16 order-1">
           <img
             className="rounded-full md:h-[350px] md:w-[350px] shadow-2xl shadow-blue-300"
             src={photo}

@@ -53,7 +53,7 @@ const Experience = () => {
     >
       <h1 className="text-3xl font-bold mb-10 text-white">My Experience</h1>
       <div className="relative w-full max-w-5xl mt-7">
-        <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-green-700 to-blue-700 transform -translate-x-1/2" />
+        <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-green-700 to-blue-700 transform -translate-x-1/2" />
         <div className="space-y-12">
           {experiences.map((exp, i) => {
             const [ref, inView] = useInView({
@@ -68,22 +68,22 @@ const Experience = () => {
                 initial="hidden"
                 animate={inView ? "visible" : "hidden"}
                 variants={itemVariant}
-                className="relative w-full flex"
+                className="relative w-full flex flex-col md:flex-row md:items-center"
               >
                 {exp.side === "left" ? (
                   <>
-                    <div className="w-3/6 flex justify-end pr-6 transform transition-transform duration-300 hover:scale-105">
+                    <div className="w-full md:w-3/6 flex justify-center md:justify-end md:pr-6 transform transition-transform duration-300 hover:scale-105">
                       <div className="bg-blue-950 text-white p-4 rounded-lg shadow-md w-full max-w-2xl">
                         <div className="flex">
                           <img src={exp.img} alt="img" className="h-20 w-20" />
-                          <h2 className=" text-xl font-bold ml-5 mt-5">
+                          <h2 className=" text-lg md:text-xl font-bold ml-5 mt-3 md:mt-5">
                             {exp.company}
                           </h2>
                         </div>
-                        <h2 className="text-xl font-semibold mt-5 text-green-400">
+                        <h2 className="text-lg md:text-xl font-semibold mt-3 md:mt-5 text-green-400">
                           {exp.title}
                         </h2>
-                        <div className="ml-5 mt-3">
+                        <div className="md:ml-5 mt-3">
                           {exp.responsibility.map((item, index) => (
                             <p
                               key={index}
@@ -94,11 +94,11 @@ const Experience = () => {
                             </p>
                           ))}
                         </div>
-                        <div className="flex flex-wrap gap-2 mt-7">
+                        <div className="flex flex-wrap gap-2 mt-5 md:mt-7">
                           {exp.techStack.map((tech, index) => (
                             <span
                               key={index}
-                              className="text-sm text-white px-3 py-1  border rounded-full border-cyan-500 shadow-md hover:shadow-sky-700"
+                              className="text-xs md:text-sm text-white px-2 md:px-3 py-1  border rounded-full border-cyan-500 shadow-md hover:shadow-sky-700"
                             >
                               {tech}
                             </span>
@@ -106,31 +106,31 @@ const Experience = () => {
                         </div>
                       </div>
                     </div>
-                    <div className="w-1/2 pl-6 flex items-center">
-                      <span className="text-md text-gray-200 whitespace-nowrap">
+                    <div className="w-full md:w-1/2 md:pl-6 flex justify-center items-center md:justify-start">
+                      <span className="text-sm md:text-md text-gray-200 whitespace-nowrap">
                         {exp.date}
                       </span>
                     </div>
                   </>
                 ) : (
                   <>
-                    <div className="w-1/2 flex justify-end pr-6 items-center ">
-                      <span className="text-md text-gray-200 whitespace-nowrap">
+                    <div className="w-full md:w-1/2 md:pr-6 flex justify-center items-center md:justify-start">
+                      <span className="text-sm md:text-md text-gray-200 whitespace-nowrap">
                         {exp.date}
                       </span>
                     </div>
-                    <div className="w-3/6 flex justify-start pl-6 transform transition-transform duration-300 hover:scale-105">
+                    <div className="w-full md:w-3/6 flex justify-center md:justify-start md:pl-6 transform transition-transform duration-300 hover:scale-105">
                       <div className="p-4 bg-blue-950 text-white rounded-lg shadow-md w-full max-w-2xl text-left">
                         <div className="flex">
                           <img src={exp.img} alt="img" className="h-20 w-20" />
-                          <h2 className=" text-xl font-bold ml-5 mt-5">
+                          <h2 className="text-lg md:text-xl font-bold ml-5 mt-3 md:mt-5">
                             {exp.company}
                           </h2>
                         </div>
-                        <h2 className="text-xl font-semibold mt-5 text-green-400">
+                        <h2 className="texyt-lg md:text-xl font-semibold mt-3 md:mt-5 text-green-400">
                           {exp.title}
                         </h2>
-                        <div className="ml-5 mt-3">
+                        <div className="md:ml-5 mt-3">
                           {exp.responsibility.map((item, index) => (
                             <p
                               key={index}
@@ -141,11 +141,11 @@ const Experience = () => {
                             </p>
                           ))}
                         </div>
-                        <div className="flex flex-wrap gap-2 mt-7">
+                        <div className="flex flex-wrap gap-2 mt-5 md:mt-7">
                           {exp.techStack.map((tech, index) => (
                             <span
                               key={index}
-                              className="text-sm text-white px-3 py-1  border rounded-full border-cyan-500 shadow-md hover:shadow-sky-700"
+                              className="text-xs md:text-sm text-white px-2 md:px-3 py-1  border rounded-full border-cyan-500 shadow-md hover:shadow-sky-700"
                             >
                               {tech}
                             </span>

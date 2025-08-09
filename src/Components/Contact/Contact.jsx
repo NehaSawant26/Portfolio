@@ -58,7 +58,7 @@ const Contact = () => {
             </a>
           </div>
         </div>
-        <div className="flex-1 w-full mt-32">
+        <div className="flex-1 w-full mt-10 md:mt-32 p-3">
           <form
             action="https://getform.io/f/bjjegrzb"
             method="POST"
