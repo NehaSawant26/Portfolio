@@ -43,8 +43,8 @@ const Home = () => {
         <source src={video} type="Video/mp4" />
       </video>
 
-      <div className="relative z-10 flex flex-col md:flex-row  items-center justify-center w-full">
-        <div className="md:w-1/2 md:p-20 p-12 order-2 md:order-1">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-center w-full">
+        <div className="w-full md:w-3/4 lg:w-1/2 lg:p-20 p-12 order-2 lg:order-1">
           <motion.div
             className="text-white text-xl space-y-4"
             initial={{ opacity: 0, x: -50 }}
@@ -98,7 +98,7 @@ const Home = () => {
             </div>
           )}
         </div>
-        <div className="relative md:w-1/2 md:ml-40 mt-16 order-1">
+        <div className="relative lg:w-1/2 lg:ml-40 mt-16 order-1">
           <img
             className="rounded-full md:h-[350px] md:w-[350px] shadow-2xl shadow-blue-300"
             src={photo}

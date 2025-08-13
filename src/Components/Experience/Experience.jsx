@@ -72,11 +72,15 @@ const Experience = () => {
               >
                 {exp.side === "left" ? (
                   <>
-                    <div className="w-full md:w-3/6 flex justify-center md:justify-end md:pr-6 transform transition-transform duration-300 hover:scale-105">
+                    <div className="w-full md:w-3/6 flex justify-center md:pr-6 md:justify-end transform transition-transform duration-300 hover:scale-105">
                       <div className="bg-blue-950 text-white p-4 rounded-lg shadow-md w-full max-w-2xl">
                         <div className="flex">
-                          <img src={exp.img} alt="img" className="h-20 w-20" />
-                          <h2 className=" text-lg md:text-xl font-bold ml-5 mt-3 md:mt-5">
+                          <img
+                            src={exp.img}
+                            alt="img"
+                            className="h-20 w-20 md:h-14 md:w-14 md:mt-2"
+                          />
+                          <h2 className="text-xl md:text-lg font-bold ml-5 mt-3">
                             {exp.company}
                           </h2>
                         </div>
@@ -114,7 +118,7 @@ const Experience = () => {
                   </>
                 ) : (
                   <>
-                    <div className="w-full md:w-1/2 md:pr-6 flex justify-center items-center md:justify-start">
+                    <div className="w-full md:w-1/2 md:pr-6 flex justify-center items-center md:justify-end">
                       <span className="text-sm md:text-md text-gray-200 whitespace-nowrap">
                         {exp.date}
                       </span>
@@ -122,8 +126,12 @@ const Experience = () => {
                     <div className="w-full md:w-3/6 flex justify-center md:justify-start md:pl-6 transform transition-transform duration-300 hover:scale-105">
                       <div className="p-4 bg-blue-950 text-white rounded-lg shadow-md w-full max-w-2xl text-left">
                         <div className="flex">
-                          <img src={exp.img} alt="img" className="h-20 w-20" />
-                          <h2 className="text-lg md:text-xl font-bold ml-5 mt-3 md:mt-5">
+                          <img
+                            src={exp.img}
+                            alt="img"
+                            className="h-20 w-20 md:h-14 md:w-14 md:mt-2"
+                          />
+                          <h2 className="text-xl md:text-lg font-bold ml-5 mt-4">
                             {exp.company}
                           </h2>
                         </div>

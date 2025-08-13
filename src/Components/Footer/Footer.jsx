@@ -42,13 +42,13 @@ const Footer = () => {
       <div className="flex flex-col md:flex-row justify-around mt-10">
         <div className="relative flex justify-center">
           <div className="absolute inset-0 flex justify-center items-center">
-            <div className="w-32 h-40 md:w-40 md:h-52 rounded-full bg-gradient-to-b from-blue-950 via-purple-800 to-indigo-800 blur-lg animate-pulse-grow z-0"></div>
+            <div className="w-32 h-40 md:w-40 md:h-52 rounded-full bg-gradient-to-b from-blue-800 via-purple-800 to-indigo-800 blur-lg animate-pulse-grow z-0"></div>
           </div>
 
           <img
             src={logo}
             alt="Profile"
-            className="relative w-32 h-32 md:w-40 md:h-40 md:mt-8 rounded-full object-cover "
+            className="relative w-32 h-32 md:w-40 md:h-40 md:mt-10 rounded-full object-cover "
           />
         </div>
 

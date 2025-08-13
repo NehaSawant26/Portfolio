@@ -62,12 +62,12 @@ const About = () => {
     <div
       ref={ref}
       name="About Me"
-      className=" text-white md:mx-20 rounded-2xl p-3 mb-10 mx-4 mt-3"
+      className=" text-white md:mx-8 lg:mx-20 rounded-2xl p-3 mb-10 mx-4 mt-3"
     >
       <h2 className="text-2xl md:text-4xl text-center font-bold">About Me</h2>
 
-      <div className="flex flex-col md:flex-row mt-12 md:justify-evenly gap-10">
-        <div className="w-full md:w-3/6 flex flex-col items-center md:items-start justify-center px-4">
+      <div className="flex flex-col lg:flex-row mt-8 lg:justify-evenly">
+        <div className="w-full lg:w-3/6 flex flex-col items-center lg:items-start justify-center px-4">
           <motion.p
             className="text-white text-xl space-y-4"
             initial={{ opacity: 0, x: -50 }}
@@ -132,11 +132,11 @@ const About = () => {
           <div className=""></div>
         </div>
 
-        <div className="w-full md:w-2/5 md:ml-16 mt-2 sm:mt-7">
+        <div className="w-full md:w-4/5 lg:w-2/5 md:ml-16 mt-2 sm:mt-7">
           <motion.div
             className="border border-purple-500 p-5 pl-10 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
             initial={{ opacity: 0, y: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8, delay: 2 }}
           >
@@ -168,11 +168,11 @@ const About = () => {
             </div>
           </motion.div>
 
-          <div className="flex flex-col sm:flex-row gap-5">
+          <div className="flex flex-col sm:flex-row mt-3 md:mt-6 gap-5">
             <motion.div
               className="border border-purple-500 pt-3 p-3 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 3 }}
             >
@@ -183,7 +183,7 @@ const About = () => {
             <motion.div
               className="border border-purple-500 pt-3 p-6 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 4 }}
             >
@@ -194,7 +194,7 @@ const About = () => {
             <motion.div
               className="border border-purple-500 pt-3 p-4 rounded-xl shadow-md hover:scale-105 hover:shadow-emerald-500"
               initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.8, delay: 5 }}
             >
