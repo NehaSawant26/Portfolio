@@ -87,17 +87,17 @@ const Footer = () => {
             📍 Buldhana, Maharashtra
           </h1>
           <div className="flex justify-center md:justify-start mb-10 md:mb-28 gap-5 ">
-            <a href="mailto: sawantneha439@gmail.com">
+            <a href="mailto:sawantneha439@gmail.com">
               <FaEnvelope className="h-10 w-10 md:h-12 md:w-12 border border-blue-400 p-2 text-gray-400 rounded-full shadow-lg hover:shadow-blue-500 hover:scale-95" />
             </a>
             <a
-              href="https://api.whatsapp.com/send?phone=918149999999"
+              href="https://api.whatsapp.com/send?phone=7666095665"
               target="_blank"
               rel="noopener noreferrer"
             >
               <FaWhatsapp className="h-10 w-10 md:h-12 md:w-12 border border-blue-400 p-2 text-green-600 rounded-full shadow-lg hover:shadow-blue-500 hover:scale-95" />
             </a>
-            <a href="www.linkedin.com/in/neha-sawant-80044b288">
+            <a href="https://www.linkedin.com/in/neha-sawant-80044b288/">
               <FaLinkedinIn className="h-10 w-10 md:h-12 md:w-12 border border-blue-400 p-2  text-blue-600 rounded-full shadow-lg hover:shadow-blue-500 hover:scale-95" />
             </a>
             <a href="https://github.com/NehaSawant26">
